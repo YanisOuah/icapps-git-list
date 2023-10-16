@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GithubListComponent } from './features/github-list/github-list.component';
+import { GithubDetailComponent } from './features/github-detail/github-detail.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GithubListComponent,
+    GithubDetailComponent
   ],
   imports: [
     BrowserModule,
