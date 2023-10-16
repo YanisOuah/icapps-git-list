@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ProjectService } from 'src/app/core/project.service';
-import { Project } from 'src/app/models/Project';
+import { Project } from 'src/app/shared/models/Project';
 
 @Component({
   selector: 'app-github-list',
@@ -14,11 +14,11 @@ export class GithubListComponent {
     this.searchProjectsByName('tetris');
   }
 
-  searchProjectsByName(name: string) {
+  searchProjectsByName = (name: string) => {
     this.projectService.getProjects(name).subscribe((data) => {
       console.log(123);
       this.projects = data;
       console.log(data);
     });
-  }
+  };
 }

@@ -1,2 +1,4 @@
-<p>github-list works!</p>
-<div *ngFor="let project of projects">{{ project.name }}</div>
+<app-search-bar [onSearch]="searchProjectsByName" />
+<div *ngFor="let project of projects">
+  {{ project.name }} | {{ project.stargazers_count }}
+</div>

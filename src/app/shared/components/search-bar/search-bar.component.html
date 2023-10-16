@@ -1,0 +1,6 @@
+<form (submit)="searchProjects()">
+  <input type="text" name="test" [(ngModel)]="name" required />
+  <button class="primary" type="button" (click)="searchProjects()">
+    Search
+  </button>
+</form>
