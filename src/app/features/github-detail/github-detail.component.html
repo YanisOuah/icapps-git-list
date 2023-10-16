@@ -1,1 +1,58 @@
-<p>github-detail works!</p>
+<div>
+  <a routerLink="/">Back with Absolute Routing</a>
+  <h2>Project Details</h2>
+  <div>
+    <h3>Project Name:</h3>
+    <div *ngIf="project; else elseBlock">
+      <p>{{ project.name }}</p>
+    </div>
+    <ng-template #elseBlock>loading</ng-template>
+  </div>
+  <div>
+    <h3>Stargazer Count:</h3>
+    <div *ngIf="project; else elseBlock">
+      <p>{{ project.stargazers_count }}</p>
+    </div>
+    <ng-template #elseBlock>loading</ng-template>
+  </div>
+  <div>
+    <h3>Forks:</h3>
+    <div *ngIf="project; else elseBlock">
+      <p>{{ project.forks_count }}</p>
+    </div>
+    <ng-template #elseBlock>loading</ng-template>
+  </div>
+  <div>
+    <h3>Owner's Login:</h3>
+    <div *ngIf="project; else elseBlock">
+      <p>{{ project.owner.login }}</p>
+    </div>
+    <ng-template #elseBlock>loading</ng-template>
+  </div>
+  <div>
+    <h3>Owner's Picture:</h3>
+    <div *ngIf="project; else elseBlock">
+      <img
+        [src]="project.owner.avatar_url"
+        alt="Owner Picture"
+        width="100"
+        height="100"
+      />
+    </div>
+    <ng-template #elseBlock>loading</ng-template>
+  </div>
+  <div>
+    <h3>Description:</h3>
+    <div *ngIf="project; else elseBlock">
+      <p>{{ project.description }}</p>
+    </div>
+    <ng-template #elseBlock>loading</ng-template>
+  </div>
+  <div>
+    <h3>Project URL:</h3>
+    <div *ngIf="project; else elseBlock">
+      <a [href]="project.url">{{ project.url }}</a>
+    </div>
+    <ng-template #elseBlock>loading</ng-template>
+  </div>
+</div>

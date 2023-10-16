@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProjectService } from 'src/app/core/project.service';
 import { Project } from 'src/app/shared/models/Project';
 
@@ -10,15 +11,18 @@ import { Project } from 'src/app/shared/models/Project';
 export class GithubListComponent {
   projects: Project[] = [];
 
-  constructor(private projectService: ProjectService) {
+  constructor(private projectService: ProjectService, private router: Router) {
     this.searchProjectsByName('tetris');
   }
 
   searchProjectsByName = (name: string) => {
     this.projectService.getProjects(name).subscribe((data) => {
-      console.log(123);
       this.projects = data;
       console.log(data);
     });
+  };
+
+  openProjectDetails = (owner: string, repo: string) => {
+    this.router.navigateByUrl(`/detail?ownerId=${owner}&repoId=${repo}`);
   };
 }

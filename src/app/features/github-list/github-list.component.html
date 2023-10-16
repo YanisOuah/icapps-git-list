@@ -1,4 +1,7 @@
 <app-search-bar [onSearch]="searchProjectsByName" />
-<div *ngFor="let project of projects">
+<div
+  *ngFor="let project of projects"
+  (click)="openProjectDetails(project.owner.login, project.name)"
+>
   {{ project.name }} | {{ project.stargazers_count }}
 </div>
