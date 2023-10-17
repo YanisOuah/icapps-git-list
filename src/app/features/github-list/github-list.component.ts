@@ -12,7 +12,7 @@ export class GithubListComponent {
   projects: Project[] = [];
 
   constructor(private projectService: ProjectService, private router: Router) {
-    this.searchProjectsByName('tetris');
+    this.searchProjectsByName('icapps');
   }
 
   searchProjectsByName = (name: string) => {

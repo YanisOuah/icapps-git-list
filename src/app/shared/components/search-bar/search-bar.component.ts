@@ -9,7 +9,7 @@ export class SearchBarComponent {
   @Input({ required: true }) onSearch: (text: string) => void = () => {
     console.log('onSearch Not Initialized');
   };
-  name: string = 'test123';
+  name: string = 'icapps';
   searchProjects() {
     if (this.name !== '') {
       this.onSearch(this.name);

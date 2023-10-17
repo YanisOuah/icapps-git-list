@@ -1,7 +1,19 @@
 <app-search-bar [onSearch]="searchProjectsByName" />
-<div
-  *ngFor="let project of projects"
-  (click)="openProjectDetails(project.owner.login, project.name)"
->
-  {{ project.name }} | {{ project.stargazers_count }}
+
+<div class="card-columns">
+  <div
+    *ngFor="let project of projects"
+    (click)="openProjectDetails(project.owner.login, project.name)"
+    class="card card-block projectCard"
+  >
+    <h3 class="card-title">{{ project.name }}</h3>
+
+    <p class="card-text">
+      <svg-icon
+        src="assets/icons/star.svg"
+        [svgStyle]="{ 'width.px': 10, 'height.px': 10 }"
+      />
+      {{ project.stargazers_count }}
+    </p>
+  </div>
 </div>
