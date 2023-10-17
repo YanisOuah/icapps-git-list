@@ -1,4 +1,18 @@
+.project-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.search-bar-container {
+  margin: 2rem auto;
+}
+.project-list {
+  max-width: 800px;
+}
 .projectCard {
   cursor: pointer;
   border-radius: 10px;
+  &:hover {
+    background-color: #f9f9f9;
+  }
 }

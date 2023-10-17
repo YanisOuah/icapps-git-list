@@ -10,15 +10,20 @@ import { Project } from 'src/app/shared/models/Project';
 })
 export class GithubListComponent {
   projects: Project[] = [];
+  loading: boolean = false;
+  loadingArray: number[] = Array(30)
+    .fill(1)
+    .map((x, i) => i + 1);
 
   constructor(private projectService: ProjectService, private router: Router) {
     this.searchProjectsByName('icapps');
   }
 
   searchProjectsByName = (name: string) => {
+    this.loading = true;
     this.projectService.getProjects(name).subscribe((data) => {
       this.projects = data;
-      console.log(data);
+      this.loading = false;
     });
   };
 

@@ -1,19 +1,47 @@
-<app-search-bar [onSearch]="searchProjectsByName" />
-
-<div class="card-columns">
-  <div
-    *ngFor="let project of projects"
-    (click)="openProjectDetails(project.owner.login, project.name)"
-    class="card card-block projectCard"
-  >
-    <h3 class="card-title">{{ project.name }}</h3>
-
-    <p class="card-text">
-      <svg-icon
-        src="assets/icons/star.svg"
-        [svgStyle]="{ 'width.px': 10, 'height.px': 10 }"
+<div class="project-list-container">
+  <div class="search-bar-container">
+    <app-search-bar [onSearch]="searchProjectsByName" />
+  </div>
+  <div class="project-list">
+    <div class="card-columns" *ngIf="!loading">
+      <div
+        *ngFor="let project of projects"
+        (click)="openProjectDetails(project.owner.login, project.name)"
+        class="card card-block projectCard"
+      >
+        <h3 class="card-title">{{ project.name }}</h3>
+        <p class="card-text">
+          <svg-icon
+            src="assets/icons/star.svg"
+            [svgStyle]="{ 'width.px': 10, 'height.px': 10 }"
+          />
+          {{ project.stargazers_count }}
+        </p>
+      </div>
+      <div
+        *ngFor="let project of projects"
+        (click)="openProjectDetails(project.owner.login, project.name)"
+        class="card card-block projectCard"
+      >
+        <h3 class="card-title">{{ project.name }}</h3>
+        <p class="card-text">
+          <svg-icon
+            src="assets/icons/star.svg"
+            [svgStyle]="{ 'width.px': 10, 'height.px': 10 }"
+          />
+          {{ project.stargazers_count }}
+        </p>
+      </div>
+    </div>
+    <div class="card-columns" *ngIf="!loading">
+      <app-project-card
+        *ngFor="let project of projects"
+        [name]="project.name"
+        [stars]="project.stargazers_count"
       />
-      {{ project.stargazers_count }}
-    </p>
+    </div>
+    <div class="card-columns" *ngIf="loading">
+      <app-project-card *ngFor="let temp of loadingArray" />
+    </div>
   </div>
 </div>
