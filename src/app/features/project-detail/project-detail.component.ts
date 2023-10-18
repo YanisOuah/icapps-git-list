@@ -4,11 +4,11 @@ import { ActivatedRoute } from '@angular/router';
 import { Project } from 'src/app/shared/models/Project';
 
 @Component({
-  selector: 'app-github-detail',
-  templateUrl: './github-detail.component.html',
-  styleUrls: ['./github-detail.component.scss'],
+  selector: 'app-project-detail',
+  templateUrl: './project-detail.component.html',
+  styleUrls: ['./project-detail.component.scss'],
 })
-export class GithubDetailComponent {
+export class ProjectDetailComponent {
   project: Project | null = null;
 
   constructor(

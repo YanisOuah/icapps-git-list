@@ -1,4 +1,6 @@
 <form clrForm class="search-bar" (submit)="searchProjects()">
-  <input clrInput name="input" [(ngModel)]="name" />
-  <button class="btn" (click)="searchProjects()">Search</button>
+  <input clrInput id="searchInput" name="input" [(ngModel)]="name" />
+  <button class="btn" id="searchButton" (click)="searchProjects()">
+    Search
+  </button>
 </form>

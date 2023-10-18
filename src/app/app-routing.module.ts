@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GithubListComponent } from './features/github-list/github-list.component';
-import { GithubDetailComponent } from './features/github-detail/github-detail.component';
+import { ProjectListComponent } from './features/project-list/project-list.component';
+import { ProjectDetailComponent } from './features/project-detail/project-detail.component';
 
 const routes: Routes = [
-  { path: '', component: GithubListComponent },
-  { path: 'detail', component: GithubDetailComponent },
+  { path: '', component: ProjectListComponent },
+  { path: 'detail', component: ProjectDetailComponent },
 ];
 
 @NgModule({

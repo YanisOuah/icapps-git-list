@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GithubListComponent } from './features/github-list/github-list.component';
-import { GithubDetailComponent } from './features/github-detail/github-detail.component';
+import { ProjectListComponent } from './features/project-list/project-list.component';
+import { ProjectDetailComponent } from './features/project-detail/project-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchBarComponent } from './shared/components/search-bar/search-bar.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
@@ -21,8 +21,8 @@ export const imports = [
 @NgModule({
   declarations: [
     AppComponent,
-    GithubListComponent,
-    GithubDetailComponent,
+    ProjectListComponent,
+    ProjectDetailComponent,
     SearchBarComponent,
     ProjectCardComponent,
   ],

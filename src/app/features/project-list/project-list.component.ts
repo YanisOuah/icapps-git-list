@@ -4,11 +4,11 @@ import { ProjectService } from 'src/app/core/services/project.service';
 import { Project } from 'src/app/shared/models/Project';
 
 @Component({
-  selector: 'app-github-list',
-  templateUrl: './github-list.component.html',
-  styleUrls: ['./github-list.component.scss'],
+  selector: 'app-project-list',
+  templateUrl: './project-list.component.html',
+  styleUrls: ['./project-list.component.scss'],
 })
-export class GithubListComponent {
+export class ProjectListComponent {
   projects: Project[] = [];
   loading: boolean = false;
   loadingArray: number[] = Array(30)
