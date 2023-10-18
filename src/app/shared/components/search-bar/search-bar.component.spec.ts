@@ -21,7 +21,7 @@ describe('SearchBarComponent (minimal)', () => {
     expect(component).toBeDefined();
   });
 
-  it('should support ngModel for standalone fields', fakeAsync(() => {
+  it('should support ngModel for standalone fields', () => {
     const newValue = 'new value';
     const element: HTMLInputElement =
       fixture.debugElement.nativeElement.querySelector('#searchInput');
@@ -30,9 +30,9 @@ describe('SearchBarComponent (minimal)', () => {
     fixture.whenStable().then(() => {
       expect(element.value).toEqual(newValue);
     });
-  }));
+  });
 
-  it('should support ngModel for standalone fields', fakeAsync(() => {
+  it('should support ngModel for standalone fields', () => {
     const newValue = 'new value';
     const element: HTMLInputElement =
       fixture.debugElement.nativeElement.querySelector('#searchInput');
@@ -42,16 +42,13 @@ describe('SearchBarComponent (minimal)', () => {
       element.dispatchEvent(new Event('input'));
       expect(component.name).toEqual(newValue);
     });
-  }));
+  });
 
-  it('should support ngModel for standalone fields', fakeAsync(() => {
-    let spy = spyOn(component, 'searchProjects').and.callFake(() => {
-      console.log(123);
-    });
-
+  it('should support ngModel for standalone fields', () => {
+    let spy = spyOn(component, 'searchProjects').and.callFake(() => {});
     const element: HTMLButtonElement =
       fixture.debugElement.nativeElement.querySelector('#searchButton');
     element.click();
     expect(spy).toHaveBeenCalled();
-  }));
+  });
 });
