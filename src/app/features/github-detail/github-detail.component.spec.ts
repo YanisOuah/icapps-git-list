@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { GithubDetailComponent } from './github-detail.component';
+import { imports } from 'src/app/app.module';
 
 describe('GithubDetailComponent', () => {
   let component: GithubDetailComponent;
@@ -8,7 +8,8 @@ describe('GithubDetailComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [GithubDetailComponent]
+      imports: imports,
+      declarations: [GithubDetailComponent],
     });
     fixture = TestBed.createComponent(GithubDetailComponent);
     component = fixture.componentInstance;

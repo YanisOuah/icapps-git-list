@@ -10,6 +10,14 @@ import { SearchBarComponent } from './shared/components/search-bar/search-bar.co
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ProjectCardComponent } from './shared/components/project-card/project-card.component';
 
+export const imports = [
+  BrowserModule,
+  AppRoutingModule,
+  HttpClientModule,
+  FormsModule,
+  AngularSvgIconModule.forRoot(),
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,13 +26,7 @@ import { ProjectCardComponent } from './shared/components/project-card/project-c
     SearchBarComponent,
     ProjectCardComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    AngularSvgIconModule.forRoot(),
-  ],
+  imports: [imports],
   providers: [],
   bootstrap: [AppComponent],
 })

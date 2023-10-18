@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProjectService } from 'src/app/core/project.service';
+import { ProjectService } from 'src/app/core/services/project.service';
 import { ActivatedRoute } from '@angular/router';
 import { Project } from 'src/app/shared/models/Project';
 
