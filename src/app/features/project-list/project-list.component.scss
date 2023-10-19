@@ -6,16 +6,11 @@
 .search-bar-container {
   margin: 2rem auto;
 }
-.project-list {
-  max-width: 800px;
-}
-.projectCard {
-  cursor: pointer;
-  border-radius: 10px;
-  &:hover {
-    background-color: #f9f9f9;
-  }
-}
+
 .search-error-message {
   color: rgb(230, 0, 0);
+}
+
+.clr-row {
+  margin: 1rem;
 }
