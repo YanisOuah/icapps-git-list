@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchBarComponent } from './shared/components/search-bar/search-bar.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ProjectCardComponent } from './shared/components/project-card/project-card.component';
+import { ProjectDetailCardComponent } from './shared/components/project-detail-card/project-detail-card.component';
 
 export const imports = [
   BrowserModule,
@@ -25,6 +26,7 @@ export const imports = [
     ProjectDetailComponent,
     SearchBarComponent,
     ProjectCardComponent,
+    ProjectDetailCardComponent,
   ],
   imports: [imports],
   providers: [],

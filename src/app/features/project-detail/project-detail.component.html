@@ -19,40 +19,8 @@
     />
     <p *ngIf="!loading; else elseBlock">{{ project!.owner.login }}</p>
   </div>
-
-  <div class="project-detail">
-    <span>project</span>
-    <div class="p-field">
-      <h6>name</h6>
-      <h2 *ngIf="!loading; else elseBlock">{{ project!.name }}</h2>
-    </div>
-
-    <div class="p-field">
-      <h6>description</h6>
-      <p *ngIf="!loading; else elseBlock">{{ project!.description }}</p>
-    </div>
-    <div class="p-field">
-      <h6>link</h6>
-      <a
-        *ngIf="!loading; else elseBlock"
-        [href]="project!.html_url"
-        target="_blank"
-        >{{ project!.html_url }}</a
-      >
-    </div>
-    <div class="p-field">
-      <h6>stars</h6>
-      <svg-icon src="assets/icons/star.svg" [svgStyle]="{ 'height.px': 12 }" />
-      <p *ngIf="!loading; else elseBlock">{{ project!.stargazers_count }}</p>
-    </div>
-    <div class="p-field">
-      <h6>forks</h6>
-      <svg-icon src="assets/icons/fork.svg" [svgStyle]="{ 'height.px': 12 }" />
-      <p *ngIf="!loading; else elseBlock">{{ project!.forks_count }}</p>
-    </div>
-  </div>
-
-  <ng-template #elseBlock>
-    <img class="loadingBlock" src="/assets/animated/loading.gif" />
-  </ng-template>
+  <app-project-detail-card [project]="project" [loading]="loading" />
 </div>
+<ng-template #elseBlock>
+  <img class="loadingBlock" src="/assets/animated/loading.gif" />
+</ng-template>
