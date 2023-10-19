@@ -14,20 +14,17 @@ describe('ProjectService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-  // it('#getProjects should return array of projects', () => {
-  //   service
-  //     .getProjects('tetris')
-  //     .subscribe((data) => expect(data.length).toBeGreaterThan(0));
-  // });
-  it('#getProjects with wrong parameters should return an error', () => {
+
+  it('#getProjects with wrong parameters should return items', () => {
     service
       .getProjects('')
       .subscribe((data) => expect(data.length).toBeGreaterThan(0));
   });
-  // it('#getProject should return projects', () => {
-  //   service.getProject('chvin', 'react-tetris').subscribe((data) => {
-  //     expect(data).toBeDefined();
-  //     expect(data.name).not.toBe('');
-  //   });
-  // });
+
+  it('#getProject should return projects', () => {
+    service.getProject('chvin', 'react-tetris').subscribe((data) => {
+      expect(data).toBeDefined();
+      expect(data.name).not.toBe('');
+    });
+  });
 });

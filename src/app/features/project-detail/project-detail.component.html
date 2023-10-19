@@ -1,4 +1,11 @@
-<a routerLink="/">Back with Absolute Routing</a>
+<div class="back-button-container">
+  <a routerLink="/">
+    <svg-icon
+      src="assets/icons/back.svg"
+      [svgStyle]="{ 'height.px': 30, 'width.px': 30 }"
+    />
+  </a>
+</div>
 <h1 class="project-details-title">Project Details</h1>
 <div class="owner-detail">
   <span>owner</span>
@@ -34,28 +41,16 @@
     }}</a>
     <ng-template #elseBlock>loading</ng-template>
   </div>
-  <div class="project-detail-icon-fields">
-    <div>
-      <p *ngIf="project; else elseBlock">
-        {{ project.stargazers_count }}
-        <svg-icon
-          src="assets/icons/star.svg"
-          [svgStyle]="{ 'height.px': 12 }"
-        />
-        stars
-      </p>
-      <ng-template #elseBlock>loading</ng-template>
-    </div>
-    <div>
-      <p *ngIf="project; else elseBlock">
-        {{ project.forks_count }}
-        <svg-icon
-          src="assets/icons/fork.svg"
-          [svgStyle]="{ 'height.px': 12 }"
-        />
-        forks
-      </p>
-      <ng-template #elseBlock>0</ng-template>
-    </div>
+  <div class="p-field">
+    <h6>stars</h6>
+    <svg-icon src="assets/icons/star.svg" [svgStyle]="{ 'height.px': 12 }" />
+    <p *ngIf="project; else elseBlock">{{ project.stargazers_count }}</p>
+    <ng-template #elseBlock>loading</ng-template>
+  </div>
+  <div class="p-field">
+    <h6>forks</h6>
+    <svg-icon src="assets/icons/fork.svg" [svgStyle]="{ 'height.px': 12 }" />
+    <p *ngIf="project; else elseBlock">{{ project.forks_count }}</p>
+    <ng-template #elseBlock>loading</ng-template>
   </div>
 </div>

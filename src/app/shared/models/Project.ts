@@ -26,7 +26,7 @@ export interface Project {
   };
   html_url: string;
   description: string;
-  fork: string;
+  fork: boolean;
   url: string;
   forks_url: string;
   keys_url: string;
@@ -87,7 +87,7 @@ export interface Project {
   archived: boolean;
   disabled: boolean;
   open_issues_count: number;
-  license: string;
+  license: any;
   allow_forking: boolean;
   is_template: boolean;
   web_commit_signoff_required: boolean;
