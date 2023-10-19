@@ -20,7 +20,7 @@ describe('SearchBarComponent (minimal)', () => {
     expect(component).toBeDefined();
   });
 
-  it('should change the input value after changing name value', fakeAsync(() => {
+  it('should change the input value after changing name value', () => {
     const newValue = 'new value';
     const element: HTMLInputElement =
       fixture.debugElement.nativeElement.querySelector('#searchInput');
@@ -29,9 +29,9 @@ describe('SearchBarComponent (minimal)', () => {
     fixture.whenStable().then(() => {
       expect(element.value).toEqual(newValue);
     });
-  }));
+  });
 
-  it('should change the name value after changing input', fakeAsync(() => {
+  it('should change the name value after changing input', () => {
     const newValue = 'new value';
     const element: HTMLInputElement =
       fixture.debugElement.nativeElement.querySelector('#searchInput');
@@ -41,7 +41,7 @@ describe('SearchBarComponent (minimal)', () => {
       element.dispatchEvent(new Event('input'));
       expect(component.name).toEqual(newValue);
     });
-  }));
+  });
 
   it('should trigger #searchProjects after pressing search button', () => {
     let spy = spyOn(component, 'searchProjects').and.callFake(() => {});
