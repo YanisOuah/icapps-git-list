@@ -11,6 +11,7 @@ import { Project } from 'src/app/shared/models/Project';
 export class ProjectListComponent {
   projects: Project[] = [];
   loading: boolean = false;
+  error: string | null = null;
   loadingArray: number[] = Array(30)
     .fill(1)
     .map((x, i) => i + 1);
@@ -20,10 +21,18 @@ export class ProjectListComponent {
   }
 
   searchProjectsByName = (name: string) => {
+    this.projects = [];
     this.loading = true;
-    this.projectService.getProjects(name).subscribe((data) => {
-      this.projects = data;
-      this.loading = false;
+    this.error = null;
+    this.projectService.getProjects(name).subscribe({
+      next: (data) => {
+        this.projects = data;
+        this.loading = false;
+      },
+      error: (error) => {
+        this.error = 'failed to fetch projects, try again in a few seconds';
+        this.loading = false;
+      },
     });
   };
 

@@ -10,6 +10,7 @@ import { Project } from 'src/app/shared/models/Project';
 })
 export class ProjectDetailComponent {
   project: Project | null = null;
+  loading: boolean = true;
 
   constructor(
     private projectService: ProjectService,
@@ -20,7 +21,7 @@ export class ProjectDetailComponent {
         .getProject(params['ownerId'], params['repoId'])
         .subscribe((data) => {
           this.project = data;
-          console.log(data);
+          this.loading = false;
         });
     });
   }

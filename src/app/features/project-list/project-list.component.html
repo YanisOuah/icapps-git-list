@@ -1,6 +1,7 @@
 <div class="project-list-container">
   <div class="search-bar-container">
     <app-search-bar [onSearch]="searchProjectsByName" />
+    <p class="search-error-message" *ngIf="!!error">{{ error }}</p>
   </div>
   <div class="project-list">
     <div class="card-columns" *ngIf="!loading">
