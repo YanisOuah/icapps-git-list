@@ -32,9 +32,12 @@
   </div>
   <div class="p-field">
     <h6>link</h6>
-    <a *ngIf="!loading; else elseBlock" [href]="project!.url">{{
-      project!.url
-    }}</a>
+    <a
+      *ngIf="!loading; else elseBlock"
+      [href]="project!.html_url"
+      target="_blank"
+      >{{ project!.html_url }}</a
+    >
   </div>
   <div class="p-field">
     <h6>stars</h6>
