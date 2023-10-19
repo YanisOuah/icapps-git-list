@@ -1,0 +1,14 @@
+<div class="owner-detail">
+  <span>owner</span>
+  <img
+    *ngIf="!loading; else elseBlock"
+    [src]="imgUrl"
+    alt="Owner Picture"
+    width="100"
+    height="100"
+  />
+  <p *ngIf="!loading; else elseBlock">{{ name }}</p>
+  <ng-template #elseBlock>
+    <img class="loadingBlock" src="/assets/animated/loading.gif" />
+  </ng-template>
+</div>

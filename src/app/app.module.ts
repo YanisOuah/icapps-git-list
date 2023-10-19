@@ -10,6 +10,7 @@ import { SearchBarComponent } from './shared/components/search-bar/search-bar.co
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ProjectCardComponent } from './shared/components/project-card/project-card.component';
 import { ProjectDetailCardComponent } from './shared/components/project-detail-card/project-detail-card.component';
+import { ProjectOwnerDetailCardComponent } from './shared/components/project-owner-detail-card/project-owner-detail-card.component';
 
 export const imports = [
   BrowserModule,
@@ -27,6 +28,7 @@ export const imports = [
     SearchBarComponent,
     ProjectCardComponent,
     ProjectDetailCardComponent,
+    ProjectOwnerDetailCardComponent,
   ],
   imports: [imports],
   providers: [],
